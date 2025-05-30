@@ -1,0 +1,4 @@
+/home/matthias/Bureau/BlindTestScoreManager/cmake-build-debug/CMakeFiles/testApp.dir
+/home/matthias/Bureau/BlindTestScoreManager/cmake-build-debug/CMakeFiles/ManagerApp.dir
+/home/matthias/Bureau/BlindTestScoreManager/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/matthias/Bureau/BlindTestScoreManager/cmake-build-debug/CMakeFiles/rebuild_cache.dir

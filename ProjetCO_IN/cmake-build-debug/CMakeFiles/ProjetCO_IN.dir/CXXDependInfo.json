@@ -1,0 +1,22 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "/home/matthias/Bureau/ProjetCO_IN/cmake-build-debug",
+	"dir-cur-src" : "/home/matthias/Bureau/ProjetCO_IN",
+	"dir-top-bld" : "/home/matthias/Bureau/ProjetCO_IN/cmake-build-debug",
+	"dir-top-src" : "/home/matthias/Bureau/ProjetCO_IN",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"/usr/local/lib/wx/include/gtk3-unicode-3.0",
+		"/usr/local/include/wx-3.0"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/matthias/Bureau/ProjetCO_IN/cmake-build-debug/CMakeFiles/ProjetCO_IN.dir"
+}
