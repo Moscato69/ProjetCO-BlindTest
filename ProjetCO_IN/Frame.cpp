@@ -114,44 +114,44 @@ Frame::Frame(const wxString& title)
     // Ajustement des boutons pour Teams 1 à 4
     Team1_Add = new wxButton(panel, TEAM1ADD, "Ajouter", wxPoint(offsetX, offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
     Team1_Del = new wxButton(panel, TEAM1DEL, "Supprimer", wxPoint(offsetX + (elementWidth / 2), offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team1_Inc = new wxButton(panel, TEAM1INC, "Plus", wxPoint(offsetX, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team1_Dec = new wxButton(panel, TEAM1DEC, "Moins", wxPoint(offsetX + (elementWidth / 2), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team1_Inc = new wxButton(panel, TEAM1INC, "+", wxPoint(offsetX, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team1_Dec = new wxButton(panel, TEAM1DEC, "-", wxPoint(offsetX + (elementWidth / 2), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
 
     Team2_Add = new wxButton(panel, TEAM2ADD, "Ajouter", wxPoint(offsetX + elementWidth, offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
     Team2_Del = new wxButton(panel, TEAM2DEL, "Supprimer", wxPoint(offsetX + (elementWidth + (elementWidth / 2)), offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team2_Inc = new wxButton(panel, TEAM2INC, "Plus", wxPoint(offsetX + elementWidth, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team2_Dec = new wxButton(panel, TEAM2DEC, "Moins", wxPoint(offsetX + (elementWidth + (elementWidth / 2)), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team2_Inc = new wxButton(panel, TEAM2INC, "+", wxPoint(offsetX + elementWidth, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team2_Dec = new wxButton(panel, TEAM2DEC, "-", wxPoint(offsetX + (elementWidth + (elementWidth / 2)), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
 
     Team3_Add = new wxButton(panel, TEAM3ADD, "Ajouter", wxPoint(offsetX + 2 * elementWidth, offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
     Team3_Del = new wxButton(panel, TEAM3DEL, "Supprimer", wxPoint(offsetX + (2 * elementWidth + (elementWidth / 2)), offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team3_Inc = new wxButton(panel, TEAM3INC, "Plus", wxPoint(offsetX + 2 * elementWidth, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team3_Dec = new wxButton(panel, TEAM3DEC, "Moins", wxPoint(offsetX + (2 * elementWidth + (elementWidth / 2)), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team3_Inc = new wxButton(panel, TEAM3INC, "+", wxPoint(offsetX + 2 * elementWidth, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team3_Dec = new wxButton(panel, TEAM3DEC, "-", wxPoint(offsetX + (2 * elementWidth + (elementWidth / 2)), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
 
     Team4_Add = new wxButton(panel, TEAM4ADD, "Ajouter", wxPoint(offsetX + 3 * elementWidth, offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
     Team4_Del = new wxButton(panel, TEAM4DEL, "Supprimer", wxPoint(offsetX + (3 * elementWidth + (elementWidth / 2)), offsetY - (elementHeight / 2)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team4_Inc = new wxButton(panel, TEAM4INC, "Plus", wxPoint(offsetX + 3 * elementWidth, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
-    Team4_Dec = new wxButton(panel, TEAM4DEC, "Moins", wxPoint(offsetX + (3 * elementWidth + (elementWidth / 2)), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team4_Inc = new wxButton(panel, TEAM4INC, "+", wxPoint(offsetX + 3 * elementWidth, offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
+    Team4_Dec = new wxButton(panel, TEAM4DEC, "-", wxPoint(offsetX + (3 * elementWidth + (elementWidth / 2)), offsetY + (elementHeight)), wxSize(elementWidth / 2, elementHeight / 2));
 
     // Ajustement des boutons pour Teams 5 à 8 - avec offset de +50 sur Y
     Team5_Add = new wxButton(panel, TEAM5ADD, "Ajouter", wxPoint(offsetX, offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
     Team5_Del = new wxButton(panel, TEAM5DEL, "Supprimer", wxPoint(offsetX + elementWidth / 2, offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team5_Inc = new wxButton(panel, TEAM5INC, "Plus", wxPoint(offsetX, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team5_Dec = new wxButton(panel, TEAM5DEC, "Moins", wxPoint(offsetX + elementWidth / 2, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team5_Inc = new wxButton(panel, TEAM5INC, "+", wxPoint(offsetX, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team5_Dec = new wxButton(panel, TEAM5DEC, "-", wxPoint(offsetX + elementWidth / 2, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
 
     Team6_Add = new wxButton(panel, TEAM6ADD, "Ajouter", wxPoint(offsetX + elementWidth, offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
     Team6_Del = new wxButton(panel, TEAM6DEL, "Supprimer", wxPoint(offsetX + elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team6_Inc = new wxButton(panel, TEAM6INC, "Plus", wxPoint(offsetX + elementWidth, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team6_Dec = new wxButton(panel, TEAM6DEC, "Moins", wxPoint(offsetX + elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team6_Inc = new wxButton(panel, TEAM6INC, "+", wxPoint(offsetX + elementWidth, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team6_Dec = new wxButton(panel, TEAM6DEC, "-", wxPoint(offsetX + elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
 
     Team7_Add = new wxButton(panel, TEAM7ADD, "Ajouter", wxPoint(offsetX + 2 * elementWidth, offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
     Team7_Del = new wxButton(panel, TEAM7DEL, "Supprimer", wxPoint(offsetX + 2 * elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team7_Inc = new wxButton(panel, TEAM7INC, "Plus", wxPoint(offsetX + 2 * elementWidth, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team7_Dec = new wxButton(panel, TEAM7DEC, "Moins", wxPoint(offsetX + 2 * elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team7_Inc = new wxButton(panel, TEAM7INC, "+", wxPoint(offsetX + 2 * elementWidth, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team7_Dec = new wxButton(panel, TEAM7DEC, "-", wxPoint(offsetX + 2 * elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
 
     Team8_Add = new wxButton(panel, TEAM8ADD, "Ajouter", wxPoint(offsetX + 3 * elementWidth, offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
     Team8_Del = new wxButton(panel, TEAM8DEL, "Supprimer", wxPoint(offsetX + 3 * elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + spacingY / 2) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team8_Inc = new wxButton(panel, TEAM8INC, "Plus", wxPoint(offsetX + 3 * elementWidth, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
-    Team8_Dec = new wxButton(panel, TEAM8DEC, "Moins", wxPoint(offsetX + 3 * elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team8_Inc = new wxButton(panel, TEAM8INC, "+", wxPoint(offsetX + 3 * elementWidth, offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
+    Team8_Dec = new wxButton(panel, TEAM8DEC, "-", wxPoint(offsetX + 3 * elementWidth + (elementWidth / 2), offsetY + 2 * (elementHeight + 2 * spacingY) + 50), wxSize(elementWidth / 2, elementHeight / 2));
 
     Frame::init();
 }
@@ -166,8 +166,9 @@ void Frame::onTeam1_AddClick(wxCommandEvent &event){
         const char* team1NameCStr = team1NameStd.c_str();
         std::cout << team1NameCStr << std::endl;
         SendUDP("add", team1NameCStr);
-        Team1_Del->Show();Team1_Dec->Show();Team1_Inc->Show();Team1_Score->Show();Team1_Add->Hide();
+        Team1_Del->Show();Team1_Dec->Show();Team1_Inc->Show();Team1_Add->Hide();
         Team2_Name->Show();Team2_Add->Show();
+        Team1_Name->SetEditable(false);
         NbTeams = 1;
     }
 }
@@ -222,8 +223,9 @@ void Frame::onTeam2_AddClick(wxCommandEvent &event){
         const char* team2NameCStr = team2NameStd.c_str();
         std::cout << team2NameCStr << std::endl;
         SendUDP("add", team2NameCStr);
-        Team2_Del->Show();Team2_Dec->Show();Team2_Inc->Show();Team2_Score->Show();Team2_Add->Hide();
+        Team2_Del->Show();Team2_Dec->Show();Team2_Inc->Show();Team2_Add->Hide();
         Team3_Name->Show();Team3_Add->Show();
+        Team2_Name->SetEditable(false);
         NbTeams = 2;
     }
 }
@@ -278,8 +280,9 @@ void Frame::onTeam3_AddClick(wxCommandEvent &event){
         const char* team3NameCStr = team3NameStd.c_str();
         std::cout << team3NameCStr << std::endl;
         SendUDP("add", team3NameCStr);
-        Team3_Del->Show();Team3_Dec->Show();Team3_Inc->Show();Team3_Score->Show();Team3_Add->Hide();
+        Team3_Del->Show();Team3_Dec->Show();Team3_Inc->Show();Team3_Add->Hide();
         Team4_Name->Show();Team4_Add->Show();
+        Team3_Name->SetEditable(false);
         NbTeams = 3;
     }
 }
@@ -335,8 +338,9 @@ void Frame::onTeam4_AddClick(wxCommandEvent &event){
         const char* team4NameCStr = team4NameStd.c_str();
         std::cout << team4NameCStr << std::endl;
         SendUDP("add", team4NameCStr);
-        Team4_Del->Show();Team4_Dec->Show();Team4_Inc->Show();Team4_Score->Show();Team4_Add->Hide();
+        Team4_Del->Show();Team4_Dec->Show();Team4_Inc->Show();Team4_Add->Hide();
         Team5_Name->Show();Team5_Add->Show();
+        Team4_Name->SetEditable(false);
         NbTeams = 4;
     }
 }
@@ -391,8 +395,9 @@ void Frame::onTeam5_AddClick(wxCommandEvent &event){
         const char* team5NameCStr = team5NameStd.c_str();
         std::cout << team5NameCStr << std::endl;
         SendUDP("add", team5NameCStr);
-        Team5_Del->Show();Team5_Dec->Show();Team5_Inc->Show();Team5_Score->Show();Team5_Add->Hide();
+        Team5_Del->Show();Team5_Dec->Show();Team5_Inc->Show();Team5_Add->Hide();
         Team6_Name->Show();Team6_Add->Show();
+        Team5_Name->SetEditable(false);
         NbTeams = 5;
     }
 }
@@ -447,8 +452,9 @@ void Frame::onTeam6_AddClick(wxCommandEvent &event){
         const char* team6NameCStr = team6NameStd.c_str();
         std::cout << team6NameCStr << std::endl;
         SendUDP("add", team6NameCStr);
-        Team6_Del->Show();Team6_Dec->Show();Team6_Inc->Show();Team6_Score->Show();Team6_Add->Hide();
+        Team6_Del->Show();Team6_Dec->Show();Team6_Inc->Show();Team6_Add->Hide();
         Team7_Name->Show();Team7_Add->Show();
+        Team6_Name->SetEditable(false);
         NbTeams = 6;
     }
 
@@ -504,8 +510,9 @@ void Frame::onTeam7_AddClick(wxCommandEvent &event){
         const char* team7NameCStr = team7NameStd.c_str();
         std::cout << team7NameCStr << std::endl;
         SendUDP("add", team7NameCStr);
-        Team7_Del->Show();Team7_Dec->Show();Team7_Inc->Show();Team7_Score->Show();Team7_Add->Hide();
+        Team7_Del->Show();Team7_Dec->Show();Team7_Inc->Show();Team7_Add->Hide();
         Team8_Name->Show();Team8_Add->Show();
+        Team7_Name->SetEditable(false);
         NbTeams = 7;
     }
 }
@@ -516,13 +523,6 @@ void Frame::onTeam7_DelClick(wxCommandEvent &event){
         SendUDP("del", Team7_Name->GetValue());
         ShiftTeamsLeft(7);
     }
-    /*wxString team7Name = Team7_Name->GetValue();
-    std::string team7NameStd = team7Name.ToStdString();
-    const char* team7NameCStr = team7NameStd.c_str();
-    std::cout << team7NameCStr << std::endl;
-    SendUDP("del", team7NameCStr);
-    Team7_Name->Clear();
-    Team7_Del->Hide();Team7_Dec->Hide();Team7_Inc->Hide();Team7_Score->Hide();Team7_Add->Show();*/
 }
 
 void Frame::onTeam7_IncClick(wxCommandEvent& event)
@@ -567,7 +567,8 @@ void Frame::onTeam8_AddClick(wxCommandEvent &event){
         const char* team8NameCStr = team8NameStd.c_str();
         std::cout << team8NameCStr << std::endl;
         SendUDP("add", team8NameCStr);
-        Team8_Del->Show();Team8_Dec->Show();Team8_Inc->Show();Team8_Score->Show();Team8_Add->Hide();
+        Team8_Del->Show();Team8_Dec->Show();Team8_Inc->Show();Team8_Add->Hide();
+        Team8_Name->SetEditable(false);
         NbTeams = 8;
     }
 }
@@ -583,6 +584,7 @@ void Frame::onTeam8_DelClick(wxCommandEvent &event){
         Team8_Name->Clear();
         Team8_Del->Hide();Team8_Dec->Hide();Team8_Inc->Hide();Team8_Score->Hide();Team8_Add->Show();
         NbTeams = 7;
+        Team8_Name->SetEditable(true);
     }
 }
 
@@ -698,6 +700,7 @@ void Frame::ShiftTeamsLeft(uint8_t StartIndex) {
     decButtons[NbTeams-1]->Hide();
     scoreFields[NbTeams-1]->Hide();
     addButtons[NbTeams-1]->Show();
+    nameFields[NbTeams-1]->SetEditable(true);
     if (NbTeams < 8)
     {
         addButtons[NbTeams]->Hide();
@@ -729,13 +732,7 @@ void Frame::OnResize(wxSizeEvent& event)
     Team2_Name->SetSize(wxRect(offsetX + elementWidth, offsetY, elementWidth, elementHeight));
     Team3_Name->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY, elementWidth, elementHeight));
     Team4_Name->SetSize(wxRect(offsetX + 3 * elementWidth, offsetY, elementWidth, elementHeight));
-
-    // Ligne 2 - Scores
-    Team1_Score->SetSize(wxRect(offsetX, offsetY + elementHeight + spacingY, elementWidth, elementHeight));
-    Team2_Score->SetSize(wxRect(offsetX + elementWidth, offsetY + elementHeight + spacingY, elementWidth, elementHeight));
-    Team3_Score->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY + elementHeight + spacingY, elementWidth, elementHeight));
-    Team4_Score->SetSize(wxRect(offsetX + 3 * elementWidth, offsetY + elementHeight + spacingY, elementWidth, elementHeight));
-
+    
     // Ligne 3 - Noms 5 à 8
     int offsetY2 = offsetY + 2 * (elementHeight + spacingY) + 50;
     std::cout << offsetY2 << std::endl;
@@ -743,35 +740,28 @@ void Frame::OnResize(wxSizeEvent& event)
     Team6_Name->SetSize(wxRect(offsetX + elementWidth, offsetY2, elementWidth, elementHeight));
     Team7_Name->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY2, elementWidth, elementHeight));
     Team8_Name->SetSize(wxRect(offsetX + 3 * elementWidth, offsetY2, elementWidth, elementHeight));
-
-    // Ligne 4 - Scores 5 à 8
-    int offsetY3 = offsetY + 3 * (elementHeight + spacingY) + 50;
-    std::cout << offsetY3 << std::endl;
-    Team5_Score->SetSize(wxRect(offsetX, offsetY3, elementWidth, elementHeight));
-    Team6_Score->SetSize(wxRect(offsetX + elementWidth, offsetY3, elementWidth, elementHeight));
-    Team7_Score->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY3, elementWidth, elementHeight));
-    Team8_Score->SetSize(wxRect(offsetX + 3 * elementWidth, offsetY3, elementWidth, elementHeight));
+    
 
     // Boutons Teams 1 à 4
     Team1_Add->SetSize(wxRect(offsetX, offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
     Team1_Del->SetSize(wxRect(offsetX + (elementWidth / 2), offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
-    Team1_Inc->SetSize(wxRect(offsetX, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
-    Team1_Dec->SetSize(wxRect(offsetX + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team1_Inc->SetSize(wxRect(offsetX + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team1_Dec->SetSize(wxRect(offsetX, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
 
     Team2_Add->SetSize(wxRect(offsetX + elementWidth, offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
     Team2_Del->SetSize(wxRect(offsetX + elementWidth + (elementWidth / 2), offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
-    Team2_Inc->SetSize(wxRect(offsetX + elementWidth, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
-    Team2_Dec->SetSize(wxRect(offsetX + elementWidth + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team2_Inc->SetSize(wxRect(offsetX + elementWidth + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team2_Dec->SetSize(wxRect(offsetX + elementWidth, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
 
     Team3_Add->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
     Team3_Del->SetSize(wxRect(offsetX + 2 * elementWidth + (elementWidth / 2), offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
-    Team3_Inc->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
-    Team3_Dec->SetSize(wxRect(offsetX + 2 * elementWidth + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team3_Inc->SetSize(wxRect(offsetX + 2 * elementWidth + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team3_Dec->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
 
     Team4_Add->SetSize(wxRect(offsetX + 3 * elementWidth, offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
     Team4_Del->SetSize(wxRect(offsetX + 3 * elementWidth + (elementWidth / 2), offsetY - (elementHeight / 2), elementWidth / 2, elementHeight / 2));
-    Team4_Inc->SetSize(wxRect(offsetX + 3 * elementWidth, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
-    Team4_Dec->SetSize(wxRect(offsetX + 3 * elementWidth + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team4_Inc->SetSize(wxRect(offsetX + 3 * elementWidth + (elementWidth / 2), offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
+    Team4_Dec->SetSize(wxRect(offsetX + 3 * elementWidth, offsetY + elementHeight, elementWidth / 2, elementHeight / 2));
 
     // Boutons Teams 5 à 8
     int by1 = offsetY + 2 * (elementHeight + spacingY / 2) + 50;
@@ -781,23 +771,23 @@ void Frame::OnResize(wxSizeEvent& event)
 
     Team5_Add->SetSize(wxRect(offsetX, by1, elementWidth / 2, elementHeight / 2));
     Team5_Del->SetSize(wxRect(offsetX + elementWidth / 2, by1, elementWidth / 2, elementHeight / 2));
-    Team5_Inc->SetSize(wxRect(offsetX, by2, elementWidth / 2, elementHeight / 2));
-    Team5_Dec->SetSize(wxRect(offsetX + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team5_Inc->SetSize(wxRect(offsetX + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team5_Dec->SetSize(wxRect(offsetX, by2, elementWidth / 2, elementHeight / 2));
 
     Team6_Add->SetSize(wxRect(offsetX + elementWidth, by1, elementWidth / 2, elementHeight / 2));
     Team6_Del->SetSize(wxRect(offsetX + elementWidth + elementWidth / 2, by1, elementWidth / 2, elementHeight / 2));
-    Team6_Inc->SetSize(wxRect(offsetX + elementWidth, by2, elementWidth / 2, elementHeight / 2));
-    Team6_Dec->SetSize(wxRect(offsetX + elementWidth + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team6_Inc->SetSize(wxRect(offsetX + elementWidth + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team6_Dec->SetSize(wxRect(offsetX + elementWidth, by2, elementWidth / 2, elementHeight / 2));
 
     Team7_Add->SetSize(wxRect(offsetX + 2 * elementWidth, by1, elementWidth / 2, elementHeight / 2));
     Team7_Del->SetSize(wxRect(offsetX + 2 * elementWidth + elementWidth / 2, by1, elementWidth / 2, elementHeight / 2));
-    Team7_Inc->SetSize(wxRect(offsetX + 2 * elementWidth, by2, elementWidth / 2, elementHeight / 2));
-    Team7_Dec->SetSize(wxRect(offsetX + 2 * elementWidth + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team7_Inc->SetSize(wxRect(offsetX + 2 * elementWidth + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team7_Dec->SetSize(wxRect(offsetX + 2 * elementWidth, by2, elementWidth / 2, elementHeight / 2));
 
     Team8_Add->SetSize(wxRect(offsetX + 3 * elementWidth, by1, elementWidth / 2, elementHeight / 2));
     Team8_Del->SetSize(wxRect(offsetX + 3 * elementWidth + elementWidth / 2, by1, elementWidth / 2, elementHeight / 2));
-    Team8_Inc->SetSize(wxRect(offsetX + 3 * elementWidth, by2, elementWidth / 2, elementHeight / 2));
-    Team8_Dec->SetSize(wxRect(offsetX + 3 * elementWidth + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team8_Inc->SetSize(wxRect(offsetX + 3 * elementWidth + elementWidth / 2, by2, elementWidth / 2, elementHeight / 2));
+    Team8_Dec->SetSize(wxRect(offsetX + 3 * elementWidth, by2, elementWidth / 2, elementHeight / 2));
 
 
     event.Skip();
@@ -859,4 +849,28 @@ void Frame::init()
     Team8_Dec->Hide();
     Team8_Score->Hide();
     Team8_Name->Hide();
+
+    Team1_Inc->SetBackgroundColour(*wxGREEN);
+    Team1_Dec->SetBackgroundColour(*wxRED);
+
+    Team2_Inc->SetBackgroundColour(*wxGREEN);
+    Team2_Dec->SetBackgroundColour(*wxRED);
+
+    Team3_Inc->SetBackgroundColour(*wxGREEN);
+    Team3_Dec->SetBackgroundColour(*wxRED);
+
+    Team4_Inc->SetBackgroundColour(*wxGREEN);
+    Team4_Dec->SetBackgroundColour(*wxRED);
+
+    Team5_Inc->SetBackgroundColour(*wxGREEN);
+    Team5_Dec->SetBackgroundColour(*wxRED);
+
+    Team6_Inc->SetBackgroundColour(*wxGREEN);
+    Team6_Dec->SetBackgroundColour(*wxRED);
+
+    Team7_Inc->SetBackgroundColour(*wxGREEN);
+    Team7_Dec->SetBackgroundColour(*wxRED);
+
+    Team8_Inc->SetBackgroundColour(*wxGREEN);
+    Team8_Dec->SetBackgroundColour(*wxRED);
 }

@@ -13,6 +13,7 @@ private:
     int sockfd;        // Socket du client
     sockaddr_in servaddr; // Adresse du serveur
     char buffer[1024];     // Buffer pour recevoir les données
+    bool SendingAndREceiving = false;
 
     // Struct pour stocker les informations sur chaque équipe
     struct TeamInfo {

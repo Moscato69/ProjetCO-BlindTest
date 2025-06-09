@@ -12,7 +12,6 @@ public:
     FrameGrid(const wxString& title);
     void SetNumberOfTeams(int numTeams);
     void UpdateSizer();
-    void OnKeyDown(wxKeyEvent& event);
 
 private:
     static constexpr int ID_F12_CAPTURED = wxID_HIGHEST + 1;
@@ -23,6 +22,7 @@ private:
 
     void OnTimer(wxTimerEvent& event);  // Méthode déclenchée par le timer
     void OnGlobalKey(wxCommandEvent& event);
+    void OnClose(wxCloseEvent& event);
 
 
     wxDECLARE_EVENT_TABLE();

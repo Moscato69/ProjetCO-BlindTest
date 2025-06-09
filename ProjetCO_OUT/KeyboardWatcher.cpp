@@ -9,12 +9,12 @@
 #include <atomic>
 #include <wx/wx.h>
 #include <chrono>
-#include <thread>
 
 static constexpr int ID_KEY_COMBINAISON_CAPTURED = wxID_HIGHEST + 1;
 
 static std::atomic<bool> running = false;
 static std::thread watcherThread;
+
 
 
 void WatchKeyboard()
@@ -68,6 +68,7 @@ void WatchKeyboard()
     }
 
     XUngrabKey(display, Keycode_F12, AnyModifier, root);
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     XCloseDisplay(display);
 }
 
@@ -85,6 +86,8 @@ void StartKeyboardWatcher()
 void StopKeyboardWatcher()
 {
     running = false;
+
     if (watcherThread.joinable())
         watcherThread.join();
+
 }

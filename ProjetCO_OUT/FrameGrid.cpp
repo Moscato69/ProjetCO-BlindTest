@@ -1,13 +1,15 @@
 #include "FrameGrid.hpp"
 #include "InputDeviceUDP.hpp"
 #include "EndFrame.hpp"
+#include <atomic>
+#include <thread>
 
+#include "KeyboardWatcher.hpp"
 // Associer l'événement du timer à la méthode OnTimer
 wxBEGIN_EVENT_TABLE(FrameGrid, wxFrame)
     EVT_TIMER(wxID_ANY, FrameGrid::OnTimer)
-    EVT_CHAR_HOOK(FrameGrid::OnKeyDown)
     EVT_COMMAND(wxID_ANY, wxEVT_MENU, FrameGrid::OnGlobalKey)
-
+    EVT_CLOSE(FrameGrid::OnClose)
 wxEND_EVENT_TABLE()
 
 FrameGrid::FrameGrid(const wxString& title)
@@ -104,29 +106,22 @@ void FrameGrid::UpdateSizer() {
 // Méthode déclenchée par le timer chaque seconde
 void FrameGrid::OnTimer(wxTimerEvent& event)
 {
+
     client.sendAndReceiveData();  // Appeler la méthode d'envoi et de réception
     UpdateSizer();  // Mettre à jour l'affichage après réception des données
+
 }
 
-void FrameGrid::OnKeyDown(wxKeyEvent& event)
-{
-    // Si la touche f12 (WXK_F12) est pressée
-    if (event.GetKeyCode() == WXK_F12)
-    {
-        this->Close(); // Ferme la fenêtre principale
-
-        // Ouvre la fenêtre de fin
-        EndFrame* endFrame = new EndFrame("Fin de l'application");
-        endFrame->Show(true);
-    }
-    else
-    {
-        event.Skip(); // Laisse les autres touches passer à d'autres handlers
-    }
-}
 void FrameGrid::OnGlobalKey(wxCommandEvent& event)
 {
-    this->Close(); // Ferme la fenêtre principale
+    m_timer.Stop();
+    this->Close(true);
+}
+
+void FrameGrid::OnClose(wxCloseEvent& event)
+{
     EndFrame* endFrame = new EndFrame("Fin de l'application");
     endFrame->Show(true);
+    // endFrame->Show(true);  // temporairement commenté
+    event.Skip();
 }

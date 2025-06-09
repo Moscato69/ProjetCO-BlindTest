@@ -4,6 +4,7 @@
 #include <cstring>
 #include <unistd.h>
 
+
 #define MAXLINEOUT 1024
 
 void OutputDeviceUDP::update(const std::unordered_map<std::string, Team>& teamMap, uint32_t tailleMap) {

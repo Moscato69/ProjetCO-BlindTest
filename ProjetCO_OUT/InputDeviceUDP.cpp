@@ -32,13 +32,14 @@ InputDeviceUDP::InputDeviceUDP(uint16_t port) : udpPort(port), sockfd(-1), numTe
 }
 
 InputDeviceUDP::~InputDeviceUDP() {
-    if (sockfd >= 0) {
+    if (sockfd >= 0 and !SendingAndREceiving    ) {
         close(sockfd);
         std::cout << "Socket fermé" << std::endl;
     }
 }
 
 void InputDeviceUDP::sendAndReceiveData() {
+    SendingAndREceiving = true;
     std::cout << "Début de sendAndReceiveData" << std::endl;
     char buffer[MAXLINEOUT] = {0};
 
@@ -90,6 +91,7 @@ void InputDeviceUDP::sendAndReceiveData() {
             std::cerr << "Erreur de réception : " << strerror(errno) << std::endl;
         }
         return;  // Ne pas continuer en cas de réception échouée
+
     }
 
 
@@ -124,12 +126,6 @@ void InputDeviceUDP::sendAndReceiveData() {
     std::string token;
     size_t i = 0;
     while (std::getline(iss, token, ';')) {
-        /*if (i > teams.size()) {
-            std::cout<<"i : "<<i<<std::endl;
-            std::cout<<teams.size()<<std::endl;
-            std::cerr << "Erreur : index d'équipe hors limites" << std::endl;
-            break;
-        }*/
 
         if (i == 0) {
             try {
@@ -164,6 +160,7 @@ void InputDeviceUDP::sendAndReceiveData() {
     std::cout<<teams[5].name << " " << teams[5].score<<std::endl;
     std::cout<<teams[6].name << " " << teams[6].score<<std::endl;
     std::cout<<teams[7].name << " " << teams[7].score<<std::endl;
+    SendingAndREceiving = false;
 
 }
 

@@ -8,20 +8,18 @@
 #include <string>
 #include <random>
 #include <iostream>
-#include <bits/fs_fwd.h>
 
 EndFrame::EndFrame(const wxString& title)
     : wxFrame(nullptr, wxID_ANY, title)
 {
     wxInitAllImageHandlers();
 
-    // Met la fenêtre en plein écran avec la barre de titre visible
     Maximize(true);
-
     wxPanel* panel = new wxPanel(this, -1);
 
     wxImage image;
-    std::string folder = "/home/matthias/Bureau/ProjetCO_OUT/";
+
+    std::string folder = "/home/matthias/Bureau/BlindTest/ProjetCO_OUT/";
     std::string randomImage = GetRandomJpegFromFolder(folder);
     if (image.LoadFile(randomImage, wxBITMAP_TYPE_ANY)) {
         wxBitmap bitmap(image);
