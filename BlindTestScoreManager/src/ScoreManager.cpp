@@ -3,7 +3,6 @@
 #include <sstream>
 
 void ScoreManager::updateScreen() noexcept {
-    std::println("test");
     this->Screen.update(this->TeamMap,this->TeamMap.size());
 }
 

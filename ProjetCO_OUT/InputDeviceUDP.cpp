@@ -152,14 +152,6 @@ void InputDeviceUDP::sendAndReceiveData() {
     }
 
     std::cout << "Traitement terminé." << std::endl;
-    std::cout<<teams[0].name << " " << teams[0].score<<std::endl;
-    std::cout<<teams[1].name << " " << teams[1].score<<std::endl;
-    std::cout<<teams[2].name << " " << teams[2].score<<std::endl;
-    std::cout<<teams[3].name << " " << teams[3].score<<std::endl;
-    std::cout<<teams[4].name << " " << teams[4].score<<std::endl;
-    std::cout<<teams[5].name << " " << teams[5].score<<std::endl;
-    std::cout<<teams[6].name << " " << teams[6].score<<std::endl;
-    std::cout<<teams[7].name << " " << teams[7].score<<std::endl;
     SendingAndREceiving = false;
 
 }

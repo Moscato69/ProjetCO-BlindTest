@@ -3,11 +3,14 @@
 //
 
 #include "EndFrame.hpp"
+#include <wx/wx.h>
+#include <wx/image.h>
 #include <filesystem>
 #include <vector>
 #include <string>
 #include <random>
 #include <iostream>
+#include <cstdlib>    // pour getenv
 
 EndFrame::EndFrame(const wxString& title)
     : wxFrame(nullptr, wxID_ANY, title)
@@ -19,9 +22,17 @@ EndFrame::EndFrame(const wxString& title)
 
     wxImage image;
 
-    std::string folder = "/home/matthias/Bureau/BlindTest/ProjetCO_OUT/";
+    // Récupération du répertoire Images depuis HOME
+    const char* homeDir = std::getenv("HOME");
+    if (homeDir == nullptr) {
+        std::cerr << "Erreur : la variable d'environnement HOME n'est pas définie." << std::endl;
+        new wxStaticText(panel, wxID_ANY, "Erreur : répertoire personnel introuvable", wxPoint(50, 50));
+        return;
+    }
+    std::string folder = std::string(homeDir) + "/Images";
+
     std::string randomImage = GetRandomJpegFromFolder(folder);
-    if (image.LoadFile(randomImage, wxBITMAP_TYPE_ANY)) {
+    if (!randomImage.empty() && image.LoadFile(randomImage, wxBITMAP_TYPE_ANY)) {
         wxBitmap bitmap(image);
         new wxStaticBitmap(panel, wxID_ANY, bitmap, wxPoint(0, 0));
     } else {
@@ -31,28 +42,29 @@ EndFrame::EndFrame(const wxString& title)
 
 std::string EndFrame::GetRandomJpegFromFolder(const std::string& folderPath) {
     namespace fs = std::filesystem;
-    std::vector<std::string> Images;
+    std::vector<std::string> images;
 
     // Parcours des fichiers dans le dossier
     for (const auto& entry : fs::directory_iterator(folderPath)) {
-        if (entry.is_regular_file()) {
-            auto path = entry.path();
-            if (path.extension() == ".jpeg" || path.extension() == ".jpg" || path.extension() == ".png") {
-                Images.push_back(path.string());
-                std::cout << path.string() << std::endl;
-            }
+        if (!entry.is_regular_file())
+            continue;
+
+        auto ext = entry.path().extension().string();
+        if (ext == ".jpeg" || ext == ".jpg" || ext == ".png") {
+            images.push_back(entry.path().string());
+            std::cout << "Trouvé : " << entry.path().string() << std::endl;
         }
     }
 
     // Aucun fichier trouvé
-    if (Images.empty()) {
+    if (images.empty()) {
         return "";
     }
 
     // Tirage aléatoire
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distr(0, Images.size() - 1);
+    std::uniform_int_distribution<std::size_t> distr(0, images.size() - 1);
 
-    return Images[distr(gen)];
+    return images[distr(gen)];
 }

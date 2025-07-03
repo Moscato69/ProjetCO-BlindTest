@@ -720,8 +720,6 @@ void Frame::OnResize(wxSizeEvent& event)
 
     elementWidth = std::clamp(size.GetWidth() / 4 - 25, minElementWidth, maxElementWidth);
     elementHeight = std::clamp(size.GetHeight() / 6, minElementHeight, maxElementHeight);
-    std::cout << elementWidth << " " << elementHeight << std::endl;
-    std::cout << elementWidth << " " << elementHeight << std::endl;
 
     int offsetX = 50;
     int offsetY = 100;
@@ -735,7 +733,6 @@ void Frame::OnResize(wxSizeEvent& event)
     
     // Ligne 3 - Noms 5 à 8
     int offsetY2 = offsetY + 2 * (elementHeight + spacingY) + 50;
-    std::cout << offsetY2 << std::endl;
     Team5_Name->SetSize(wxRect(offsetX, offsetY2, elementWidth, elementHeight));
     Team6_Name->SetSize(wxRect(offsetX + elementWidth, offsetY2, elementWidth, elementHeight));
     Team7_Name->SetSize(wxRect(offsetX + 2 * elementWidth, offsetY2, elementWidth, elementHeight));
@@ -765,9 +762,7 @@ void Frame::OnResize(wxSizeEvent& event)
 
     // Boutons Teams 5 à 8
     int by1 = offsetY + 2 * (elementHeight + spacingY / 2) + 50;
-    std::cout << by1 << std::endl;
     int by2 = offsetY + 2 * (elementHeight + 2 * spacingY) + 50;
-    std::cout << by2 << std::endl;
 
     Team5_Add->SetSize(wxRect(offsetX, by1, elementWidth / 2, elementHeight / 2));
     Team5_Del->SetSize(wxRect(offsetX + elementWidth / 2, by1, elementWidth / 2, elementHeight / 2));

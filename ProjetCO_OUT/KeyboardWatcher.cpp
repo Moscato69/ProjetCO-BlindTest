@@ -21,56 +21,57 @@ void WatchKeyboard()
 {
     Display* display = XOpenDisplay(nullptr);
     if (!display) return;
-    bool Key_F12_Captured = false;
-    bool Key_W_Captured = false;
     Window root = DefaultRootWindow(display);
-    int Keycode_F12 = XKeysymToKeycode(display, XK_F12);
-    int Keycode_W = XKeysymToKeycode(display, XK_W);
-    // Grab F12 and W key on root window with any modifier
-    XGrabKey(display, Keycode_F12, AnyModifier, root, True, GrabModeAsync, GrabModeAsync);
-    XGrabKey(display, Keycode_W, AnyModifier, root, True, GrabModeAsync, GrabModeAsync);
+
+    // Calcul des keycodes
+    int codeF12 = XKeysymToKeycode(display, XK_F12);
+    int codeW   = XKeysymToKeycode(display, XK_W);
+
+    // Masks à prendre en compte pour NumLock/CapsLock
+    const unsigned int masks[] = {
+        0,
+        LockMask,
+        Mod2Mask,
+        LockMask | Mod2Mask
+    };
+
+    // On grab les deux touches avec chaque combinaison de lock
+    for (auto m : masks) {
+        XGrabKey(display, codeF12, m, root, True, GrabModeAsync, GrabModeAsync);
+        XGrabKey(display, codeW,   m, root, True, GrabModeAsync, GrabModeAsync);
+    }
     XSelectInput(display, root, KeyPressMask);
+    XSync(display, False);  // assure que tout est envoyé au serveur
 
-    // Set X to non-blocking so XNextEvent won’t hang forever
-    XEvent event;
+    std::atomic<bool> keyF12{false}, keyW{false};
+    XEvent ev;
+    while (running) {
+        while (XPending(display) && running) {
+            XNextEvent(display, &ev);
 
-    // Make sure XPending is used to check for events without blocking
-    while (running)
-    {
-        while (XPending(display) && running)
-        {
-            XNextEvent(display, &event);
-            if (event.type == KeyPress && event.xkey.keycode == Keycode_F12)
-            {
-                Key_F12_Captured = true;
+            if (ev.type == KeyPress) {
+                if (ev.xkey.keycode == codeF12) keyF12 = true;
+                if (ev.xkey.keycode == codeW)   keyW   = true;
 
-                std::cout << event.xkey.keycode << std::endl;
-            } else if (event.type == KeyPress && event.xkey.keycode == Keycode_W)
-            {
-                Key_W_Captured = true;
-                std::cout << event.xkey.keycode << std::endl;
+                if (keyF12 && keyW) {
+                    // combinaison détectée
+                    wxCommandEvent evt(wxEVT_MENU, ID_KEY_COMBINAISON_CAPTURED);
+                    wxQueueEvent(wxTheApp->GetTopWindow(), evt.Clone());
+                    keyF12 = keyW = false;
+                }
             }
-
-            if (Key_F12_Captured && Key_W_Captured)
-            {
-                std::cout <<"arrêt " << std::endl;
-                // Post event to wxWidgets main window
-                wxCommandEvent evt(wxEVT_MENU, ID_KEY_COMBINAISON_CAPTURED);
-                wxQueueEvent(wxTheApp->GetTopWindow(), evt.Clone());
-                Key_F12_Captured = false;
-                Key_W_Captured = false;
-            }
-
-
         }
-        // Small sleep to avoid busy loop
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 
-    XUngrabKey(display, Keycode_F12, AnyModifier, root);
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    // On fait l'ungrab proprement
+    for (auto m : masks) {
+        XUngrabKey(display, codeF12, m, root);
+        XUngrabKey(display, codeW,   m, root);
+    }
     XCloseDisplay(display);
 }
+
 
 
 
@@ -78,7 +79,7 @@ void StartKeyboardWatcher()
 {
     if (running)
         return; // déjà lancé
-
+    std::cout << "Starting watcher" << std::endl;
     running = true;
     watcherThread = std::thread(WatchKeyboard);
 }
@@ -87,6 +88,7 @@ void StopKeyboardWatcher()
 {
     running = false;
 
+    std::cout << "Stopping watcher" << std::endl;
     if (watcherThread.joinable())
         watcherThread.join();
 

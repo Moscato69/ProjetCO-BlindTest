@@ -34,7 +34,6 @@ void FrameGrid::UpdateSizer() {
     // Récupérer les équipes du client
     const auto& teams = client.getTeams();
     m_numTeams = client.getNumTeams();
-    std::cout << m_numTeams << std::endl;
     if (m_numTeams >0)
     {
         // Réinitialiser le sizer
@@ -90,12 +89,13 @@ void FrameGrid::UpdateSizer() {
             // Appliquer le sizer et ajouter le panel à m_sizer
             panel->SetSizer(panelSizer);
             m_sizer->Add(panel, wxSizerFlags().Expand().Border(wxALL, 5));
+
         }
 
         // Mettre à jour l'affichage avec le nouveau sizer
         wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
         mainSizer->AddStretchSpacer(1); // Espace vide avant
-        mainSizer->Add(m_sizer, wxSizerFlags().Center().Expand());
+        mainSizer->Add(m_sizer, wxSizerFlags().Expand());
         mainSizer->AddStretchSpacer(1); // Espace vide après
         SetSizerAndFit(mainSizer);
         Layout();
